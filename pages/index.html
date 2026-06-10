@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SONGDO.PS</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Pretendard',sans-serif;
+}
+
+body{
+    background:#121212;
+    color:white;
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.container{
+    width:1200px;
+}
+
+/* 로고 */
+.logo-box{
+    height:220px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.logo{
+    font-size:80px;
+    font-weight:900;
+    font-style:italic;
+
+    background:linear-gradient(
+        90deg,
+        #ffffff,
+        #9b7dff,
+        #ffffff
+    );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+/* 메뉴 */
+.menu-container{
+    display:flex;
+    justify-content:center;
+    gap:40px;
+}
+
+/* 카드 */
+.card{
+    width:320px;
+    height:280px;
+
+    border:1px solid rgba(155,125,255,0.3);
+    border-radius:24px;
+    background:#1a1a1a;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 0 25px rgba(155,125,255,0.35);
+}
+
+/* 아이콘 */
+.icon{
+    font-size:60px;
+    color:#9b7dff;
+    margin-bottom:20px;
+}
+
+/* 타이틀 */
+.title{
+    font-size:34px;
+    font-weight:700;
+    margin-bottom:15px;
+}
+
+/* 설명 */
+.description{
+    color:#bdbdbd;
+    text-align:center;
+    line-height:1.5;
+}
+
+/* 화살표 */
+.arrow{
+    margin-top:25px;
+    font-size:32px;
+    color:#9b7dff;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="logo-box">
+        <h1 class="logo">SONGDO.PS</h1>
+    </div>
+
+    <div class="menu-container">
+
+        <!-- TIER LIST -->
+        <div class="card" onclick="location.href='./tierlist.html'">
+
+            <div class="icon">🏆</div>
+
+            <div class="title">티어리스트</div>
+
+            <div class="description">
+                5인큐 티어와 조합을<br>
+                확인해보세요
+            </div>
+
+            <div class="arrow">→</div>
+
+        </div>
+
+        <!-- PROFILE -->
+        <div class="card" onclick="location.href='../profile/profile.html'">
+
+            <div class="icon">👤</div>
+
+            <div class="title">프로필</div>
+
+            <div class="description">
+                친구들의 프로필과<br>
+                챔피언 풀을 확인하세요
+            </div>
+
+            <div class="arrow">→</div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

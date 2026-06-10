@@ -1,0 +1,218 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profile</title>
+
+<style>
+body{
+    margin:0;
+    font-family: Arial;
+    background:#0f0f13;
+    color:#fff;
+}
+
+/* top nav */
+.top-nav{
+    display:flex;
+    justify-content:space-between;
+    padding:15px 5%;
+    align-items:center;
+}
+
+.logo-text{
+    font-size:22px;
+    font-weight:800;
+    background: linear-gradient(90deg, #7f5af0, #2cb67d, #00d4ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    cursor:pointer;
+}
+
+/* layout */
+.container{
+    width:90%;
+    margin:0 auto;
+}
+
+/* card */
+.card{
+    background:#1a1a22;
+    padding:20px;
+    border-radius:15px;
+    margin-top:20px;
+
+    border:1px solid rgba(155,125,255,0.15);
+    transition:0.2s;
+}
+
+.card:hover{
+    transform:translateY(-3px);
+    border-color:#9b7dff;
+    box-shadow:0 0 15px rgba(155,125,255,0.2);
+}
+
+.match-list{
+    display:flex;
+    gap:10px;
+    overflow-x:auto;
+}
+
+.match{
+    min-width:120px;
+    background:#222;
+    padding:10px;
+    border-radius:10px;
+    text-align:center;
+
+    border:1px solid rgba(255,255,255,0.05);
+}
+
+.match.win{
+    border-color:#2cb67d;
+}
+
+.match.lose{
+    border-color:#ff5c5c;
+}
+
+.most3{
+    display:flex;
+    gap:10px;
+}
+
+.champ{
+    flex:1;
+    background:#222;
+    padding:10px;
+    border-radius:10px;
+    text-align:center;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+}
+
+.stat{
+    background:#222;
+    padding:15px;
+    border-radius:10px;
+}
+
+.positions{
+    display:flex;
+    gap:10px;
+}
+
+.pos{
+    flex:1;
+    background:#222;
+    padding:10px;
+    border-radius:10px;
+    text-align:center;
+}
+
+.back-btn{
+    position:fixed;
+    top:25px;
+    right:25px;
+    z-index: 100;
+
+    padding:10px 14px;
+
+    background:rgba(26,26,34,0.8);
+    border:1px solid rgba(155,125,255,0.3);
+
+    color:#9b7dff;
+    text-decoration:none;
+
+    border-radius:12px;
+
+    font-weight:600;
+    font-size:14px;
+
+    backdrop-filter: blur(10px);
+
+    transition:0.2s;
+
+    cursor:pointer;
+}
+
+.back-btn:hover{
+    transform:translateX(-3px);
+    border-color:#9b7dff;
+    box-shadow:0 0 15px rgba(155,125,255,0.3);
+}
+
+#username{
+    opacity:0.5;
+}
+</style>
+</head>
+
+<body>
+
+    <script>
+console.log("FULL URL:", location.href);
+console.log("SEARCH:", location.search);
+</script>
+
+<!-- TOP NAV -->
+<div class="top-nav">
+    <div class="logo-text" onclick="location.href='../pages/index.html'">
+        songdo.ps
+    </div>
+
+   <a href="./profile.html" class="back-btn">← To Back</a>
+</div>
+
+<div class="container">
+
+    <div class="card">
+        <h2 id="username">loading...</h2>
+        <p>Ingame: <span id="ingame"></span></p>
+        <p>Main: <span id="main"></span> | Sub: <span id="sub"></span></p>
+    </div>
+
+    <div class="card">
+        <h3>최근 10경기</h3>
+        <div class="match-list" id="matches"></div>
+    </div>
+
+    <div class="card">
+        <h3>모스트 3</h3>
+        <div class="most3" id="most3"></div>
+    </div>
+
+    <div class="card">
+        <h3>승률</h3>
+        <div class="grid">
+            <div class="stat">전체 <span id="wr-total"></span></div>
+            <div class="stat">5인큐 <span id="wr-5q"></span></div>
+            <div class="stat">트리오 <span id="wr-trio"></span></div>
+            <div class="stat">솔로 <span id="wr-solo"></span></div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>포지션</h3>
+        <div class="positions">
+            <div class="pos">TOP <span id="top"></span></div>
+            <div class="pos">JGL <span id="jungle"></span></div>
+            <div class="pos">MID <span id="mid"></span></div>
+            <div class="pos">ADC <span id="adc"></span></div>
+            <div class="pos">SUP <span id="sup"></span></div>
+        </div>
+    </div>
+
+</div>
+
+<script src="./profile.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>프로필 목록</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Pretendard',sans-serif;
+}
+
+body{
+    background:#121212;
+    color:white;
+    min-height:100vh;
+}
+
+.container{
+    width:1200px;
+    margin:0 auto;
+    padding:60px 0;
+}
+
+/* 상단 */
+
+.header{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.title{
+    font-size:52px;
+    font-weight:900;
+
+    background:linear-gradient(
+        90deg,
+        #ffffff,
+        #9b7dff,
+        #ffffff
+    );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.subtitle{
+    margin-top:12px;
+    color:#a0a0a0;
+    font-size:18px;
+}
+
+/* 카드 영역 */
+
+.profile-grid{
+    display:flex;
+    flex-direction:column;
+    gap:30px;
+}
+
+/* 한 줄 */
+
+.row{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+}
+
+/* 카드 */
+
+.card{
+
+    width:250px;
+    height:280px;
+
+    background:#1a1a1a;
+
+    border-radius:24px;
+
+    border:1px solid rgba(155,125,255,0.25);
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+    padding-top:25px;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:
+    0 0 25px rgba(155,125,255,0.35);
+
+    border-color:#9b7dff;
+}
+
+.name{
+    font-size:28px;
+    font-weight:700;
+    margin-bottom:12px;
+}
+
+.position{
+    color:#9b7dff;
+    font-size:18px;
+    margin-bottom:20px;
+}
+
+.detail{
+    color:#bdbdbd;
+    font-size:15px;
+}
+
+.back-btn{
+
+    position:fixed;
+
+    top:30px;
+    left:30px;
+
+    text-decoration:none;
+
+    color:#9b7dff;
+
+    font-weight:bold;
+}
+
+/* 포지션 아이콘 */
+
+.lane-icon{
+    width:200px;
+    height:200px;
+    object-fit:contain;
+    margin-bottom:15px;
+}
+
+</style>
+</head>
+
+<body>
+
+<a href="../pages/index.html" class="back-btn">
+← To Home
+</a>
+
+<div class="container">
+
+    <div class="header">
+
+        <h1 class="title">PLAYER PROFILE</h1>
+
+        <p class="subtitle">
+            우리 팀 플레이어 정보
+        </p>
+
+    </div>
+
+    <div class="profile-grid">
+
+        <!-- 첫 줄 -->
+
+        <div class="row">
+
+            <div class="card" onclick="goProfile('kms')">
+
+                <img src="../assets/lanes/top.png" class="lane-icon">
+
+                <div class="name">강민성</div>
+                <div class="position">TOP</div>
+
+            </div>
+
+            <div class="card" onclick="goProfile('kdh')">
+                <img src="../assets/lanes/mid.png" class="lane-icon">
+                <div class="name">김도현</div>
+                <div class="position">MID</div>
+            </div>
+
+            <div class="card" onclick="goProfile('ssh')">
+                <img src="../assets/lanes/top.png" class="lane-icon">
+                <div class="name">신승환</div>
+                <div class="position">TOP</div>
+            </div>
+
+            <div class="card" onclick="goProfile('ljp')">
+                <img src="../assets/lanes/top.png" class="lane-icon">
+                <div class="name">이준표</div>
+                <div class="position">TOP</div>
+            </div>
+
+        </div>
+
+        <!-- 두 번째 줄 -->
+
+        <div class="row">
+
+            <div class="card" onclick="goProfile('jyc')">
+                <img src="../assets/lanes/adc.png" class="lane-icon">
+                <div class="name">정예찬</div>
+                <div class="position">ADC</div>
+            </div>
+
+            <div class="card" onclick="goProfile('csw')">
+                <img src="../assets/lanes/jungle.png" class="lane-icon">
+                <div class="name">차선우</div>
+                <div class="position">JUG</div>
+            </div>
+
+            <div class="card" onclick="goProfile('cjh')">
+                <img src="../assets/lanes/sup.png" class="lane-icon">
+                <div class="name">최재혁</div>
+                <div class="position">SUP</div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+function goProfile(id){
+    location.href = `./private.html?id=${id}`;
+}
+
+</script>
+
+function goProfile(id){
+    location.href = `./private.html?id=${id}`;
+}
+
+<script src="profile.js"></script>
+
+</body>
+</html>
